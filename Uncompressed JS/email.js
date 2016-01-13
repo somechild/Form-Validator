@@ -1,0 +1,3 @@
+emailValidator = function(email) {
+	
+};

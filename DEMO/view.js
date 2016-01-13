@@ -43,13 +43,13 @@ a = function() { //if only validate onsubmit
 //-----------------------------------inputs validations code-----------------------------------
 
 
-		var fName = $('input[name="fullName"]');
-		if ( !fullNameValidator(fName.val()) ) { //running fullNameValidator from .../Uncompressed JS/fullNameValidator.js
+		var flName = $('input[name="fullName"]');
+		if ( !fullNameValidator(flName.val()) ) { //running fullNameValidator from .../Uncompressed JS/fullName.js
 
 
 			allAreValid = false; //if invalid, set to false
 
-			errHandler(fName, $('fieldset>p:nth-of-type(1)'), 'hasError', 'Please enter your full name');
+			errHandler(flName, $('fieldset>p:nth-of-type(1)'), 'hasError', 'Please enter your full name');
 
 			//I made a custom error handling function (called 'errHandler' --> it's called errHandler.js & in this demo folder)
 				// basically passing -->
@@ -108,7 +108,7 @@ a = function() { //if only validate onsubmit
 
 
 		var description = $('textarea[name="description"]');
-		if (! charCounter(description.val(), 200, 600, true, true) ) {
+		if (! charCounter(description.val(), 200, 600, true, true, false) ) {
 			// fn(txt, min, max, ignore spaces, ignore linebreaks)
 
 			allAreValid = false;

@@ -1,0 +1,3 @@
+urlValidator = function(url) {
+	
+};
