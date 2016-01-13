@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+	<title>Form validation demo</title>
+	
+	<link rel="stylesheet" type="text/css" href="rs.css">
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+
+<body>
+	<span style="padding:24px;display:block;">
+		<button name="opt1" onclick="i(a)">Validate form on-submit demo</button>
+		<button name="opt2" onclick="i(b)">Validate form dynamically</button>
+		<p style="margin-top:12px;">*Note* form styling obtained from <a href="http://jaypatel.co/sideSites/wc/#frms/" target="_blank">http://jaypatel.co/sideSites/wc/#frms/</a></p>
+	</span>
+	<div style="display:none;">
+		<form id="glowForm" name="testForm" action="" method="POST" accept-charset="UTF-8"
+autocomplete="off">
+
+
+			<fieldset>
+				
+				<legend>Validator Demo</legend>
+				
+
+				<p>Full name:</p>
+				<input type="text" name="fullName" placeholder="Bruce Wayne">
+
+				<p>URL:</p>
+				<input type="text" name="url" placeholder="http://google.com/">
+
+				
+
+				<p>Email:</p>
+				<input type="email" name="email" placeholder="test@swag.ca">
+				
+
+				<p>Password:</p>
+				<input type="password" name="password" placeholder="********">
+
+				<p>Confirm Password:</p>
+				<input type="password" name="confPassword" placeholder="********">
+				
+
+				<p>Provide a description (200 - 600 char):</p>
+				<textarea name="description" placeholder="Description..."></textarea>
+
+
+				<p>Upload a file (Less than 5mb): <span><a href="https://icons8.com" style="font-size:6px;color:#CCC;text-decoration:none;">Upload icon by Icons8</a></span></p>
+
+
+				<!-- 
+					'disabled' class is to indicate drag n' drop isn't available 
+						-> JS will remove 'disabled' class if drag'n drop is available 
+				-->
+				<div class="fileUpload disabled">
+					<input type="file" name="img" accept="image/*">
+					<div>
+						<p class="msgForDisabled">Click to upload file</p>
+					</div>
+					<div>
+						<p class="msgForEnabled"><b>Click here</b> or <b>Drag n' Drop</b><br>to upload</p>
+						<!-- Upload icon by Icons8 -->
+						<img src="https://maxcdn.icons8.com/iOS7/PNG/75/Very_Basic/upload-75.png" title="Upload" width="75">
+					</div>
+				</div>
+
+
+			</fieldset>
+
+
+			<input type="submit" value="Submit">
+		
+
+		</form>
+	</div>
+	<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="view.js"></script>
+	<script type="text/javascript" src="form.js"></script>
+</body>
+</html>
