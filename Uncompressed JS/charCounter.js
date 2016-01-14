@@ -17,5 +17,5 @@ charCounter = function(txt, min, max, ignSpace, ignLineBrs, toTrim) {
 	var text = toTrim? text.trim(): text;
 		text = ignSpace? ignLineBrs? txt.replace(' ', '').replace(/\s/g, ''): txt.replace(' ', '').replace(/\s/g, '_'): ignLineBrs? txt.replace(/\s/g, ''): txt.replace(/\s/g, '_');
 
-	return min? text.length > min && (max? text.length < max: true): max? text.length < max: true;
+	return min? text.length >= min && (max? text.length <= max: true): max? text.length <= max: true;
 };
