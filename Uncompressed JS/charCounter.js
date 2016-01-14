@@ -14,8 +14,19 @@
 */
 
 charCounter = function(txt, min, max, ignSpace, ignLineBrs, toTrim) {
+
+	//If err
+		// err: 0 --> less than min
+		// err: 1 --> more than max
+
+	var errNo = -1;
+
 	var text = toTrim? text.trim(): text;
 		text = ignSpace? ignLineBrs? txt.replace(' ', '').replace(/\s/g, ''): txt.replace(' ', '').replace(/\s/g, '_'): ignLineBrs? txt.replace(/\s/g, ''): txt.replace(/\s/g, '_');
 
-	return min? text.length >= min && (max? text.length <= max: true): max? text.length <= max: true;
+
+	return {
+		"isSuccess": min? !(text.length < min && (errNo = 0)) && (max? !(text.length > max && (errNo = 1)): true): max? !(text.length > max && (errNo = 1)): true,
+		"err": errNo
+	};
 };

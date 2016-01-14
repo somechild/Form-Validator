@@ -44,7 +44,7 @@ a = function() { //if only validate onsubmit
 
 
 		var flName = $('input[name="fullName"]');
-		if ( !fullNameValidator(flName.val()) ) { //running fullNameValidator from .../Uncompressed JS/fullName.js
+		if ( !fullNameValidator(flName.val()).isSuccess ) { //running fullNameValidator from .../Uncompressed JS/fullName.js
 
 
 			allAreValid = false; //if invalid, set to false
@@ -65,7 +65,7 @@ a = function() { //if only validate onsubmit
 
 
 		var url = $('input[name="url"]');
-		if (! urlValidator(url.val()) ) {
+		if (! urlValidator(url.val()).isSuccess ) {
 
 			allAreValid = false;
 
@@ -76,7 +76,7 @@ a = function() { //if only validate onsubmit
 
 
 		var email = $('input[name="email"]');
-		if (! emailValidator(email.val()) ) {
+		if (! emailValidator(email.val()).isSuccess ) {
 
 			allAreValid = false;
 
@@ -87,7 +87,7 @@ a = function() { //if only validate onsubmit
 
 
 		var pw = $('input[name="password"]');
-		if (! passwordValidator(pw.val(), 8, 24, false, [], false) ) {
+		if (! passwordValidator(pw.val(), 8, 24, false, []).isSuccess ) {
 				// see documentation for details
 
 			allAreValid = false;
@@ -108,8 +108,8 @@ a = function() { //if only validate onsubmit
 
 
 		var description = $('textarea[name="description"]');
-		if (! charCounter(description.val(), 200, 600, true, true, false) ) {
-			// fn(txt, min, max, ignore spaces, ignore linebreaks)
+		if (! charCounter(description.val(), 200, 600, true, true, false).isSuccess ) {
+			// fn(txt, min, max, ignore spaces, ignore linebreaks, trim before tests)
 
 			allAreValid = false;
 
@@ -117,8 +117,8 @@ a = function() { //if only validate onsubmit
 		};
 
 
-		if (! fileValidator($('input[name="img"]')[0].files[0], 1, 2097152, 'image') ) {
-// fn(file, minsize in bytes, maxsize in bytes, type--> false=any || 'image' || 'document'=word/rtf/txt/pages/pdf || 'pdf'=justpdf );
+		if (! fileValidator($('input[name="img"]')[0].files[0], 1, 2097152, 'image').isSuccess ) {
+// fn(file, minsize in bytes, maxsize in bytes, type--> false=any || 'image' || 'text' || 'pdf' || custom array of file extensions );
 
 			allAreValid = false;
 

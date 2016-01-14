@@ -1,3 +1,0 @@
-fullNameValidator = function(fullName) {
-	
-};
