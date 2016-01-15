@@ -192,4 +192,5 @@ This function does not give any error details (no `'err'` property in the object
 Let me know if I've made any oversights while validating, mistakes in my code or if you have improvement ideas. Constructive feedback is always welcome :)
 
 
-
+##License
+It's MIT. View [here](https://github.com/sum-kcid/Form-Validator/blob/master/LICENSE) :)
