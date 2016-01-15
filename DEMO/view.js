@@ -107,8 +107,8 @@ a = function() { //if only validate onsubmit
 		};
 
 		var pwConf = $('input[name="confPassword"]');
-		if (! stringMatcher(pw.val(), pwConf.val()) ) {
-	//stringMatcher() -> just a simple function that checks if two srings match, included in the pw validator script
+		if (! stringMatcher([pw.val(), pwConf.val()]) ) {
+	//stringMatcher() -> just a simple function that checks if srings match, included in the pw validator script
 
 			allAreValid = false;
 
@@ -154,7 +154,7 @@ a = function() { //if only validate onsubmit
 
 
 		if (allAreValid) {
-			if (!'jsBasedValidation') {
+			if ('jsBasedValidation') {
 				
 				e.preventDefault();
 
@@ -173,6 +173,9 @@ a = function() { //if only validate onsubmit
 			e.preventDefault();
 
 			$('#glowForm').prepend('<p class="errorTitle">Please correct issues with form</p>');
+		}
+		else{
+			e.preventDefault();
 		};
 
 

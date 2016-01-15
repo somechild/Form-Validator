@@ -73,8 +73,16 @@ passwordValidator = function(password, min, max, limSpChars, requirements) {
 
 };
 
-stringMatcher = function(str1, str2) {
-	return str1.toString() && str2.toString() && str1 == str2;
+
+// THIS DOES NOT RETURN .isSuccess
+stringMatcher = function(strArr) {
+	if (typeof strArr == 'object' && Array.isArray(strArr) && strArr.length>1) {
+		var firstStr = strArr[0];
+		return !!strArr.reduce(function(curr, nex) {
+			return curr * (nex == firstStr? 1: 0);
+		}, 1);
+	};
+	return false;
 };
 
 

@@ -9,7 +9,7 @@
 		// *note .files returns an array, you will have to test one file at a time
 
 
-	//type--> false=any || 'image' || 'text' || 'pdf' || or pass array of allowed file extensions );
+	//type--> false=any || 'image' || 'text' || 'pdf' || or pass array of allowed file extensions
 		// 'image', 'text', 'pdf' simply use the most common of that type
 		// you can pass preset 'text', 'image', 'pdf' in the array of allowed file extensions as well
 			//ex. ['pdf', 'text', 'xls', 'ppt']
