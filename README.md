@@ -117,5 +117,31 @@ This lets you customisably validate an entered password
  * *[2]:* if true, pw must contain at least on non-alphanumeric character
  * *[3]:* if true, pw must not contain spaces
 
+**If error**, there will be an `'err'` property passed in the object returned
+* If `passwordValidator(...).err == 0`, password fails min char requirement
+* If `passwordValidator(...).err == 1`, password fails max char requirement
+* * If `passwordValidator(...).err == 2`, password contains special characters outside of `! @ # $ % ^ & * ( ) _`
+* * If `passwordValidator(...).err == 3`, password does not contain at least one lowercase and one uppercase letter
+* * If `passwordValidator(...).err == 4`, password does not contain at least one lowercase and one uppercase letter
+* * If `passwordValidator(...).err == 5`, password does not contain at least one non-alphanumeric
+* * If `passwordValidator(...).err == 6`, password contains spaces
 
 
+###stringMatcher(strArr) | password.js
+Pass an array of strings and this just checks if all the strings match each other. Pretty straightforward :)
+
+This function does not give any error details (no `'err'` property in the object returned)
+
+
+###urlValidator(url) | url.js
+A url validator
+* **'url': string** is the url to validate on
+
+This function does not give any error details (no `'err'` property in the object returned)
+
+
+
+
+
+##Feedback
+Let me know if I've made any oversights while validating, mistakes in my code or if you have improvement ideas. Constructive feedback is always welcome :)
