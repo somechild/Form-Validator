@@ -31,6 +31,8 @@ The 'isSuccess' property of this object will let you determine if validation was
 | [fullNameValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#fullnamevalidatorfullname--namejs)| name.js |
 | [firstOrLastNameValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#firstorlastnamevalidatorinput--namejs)| name.js |
 | [passwordValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#passwordvalidatorpassword-min-max-limspchars-requirements--passwordjs)| password.js |
+| [stringMatcher(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#stringmatcherstrarr--passwordjs)| password.js |
+| [urlValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#urlvalidatorurl--urljs)| url.js |
 
 
 
@@ -128,7 +130,9 @@ This lets you customisably validate an entered password
 
 
 ###stringMatcher(strArr) | password.js
-Pass an array of strings and this just checks if all the strings match each other. Pretty straightforward :)
+Pass an array of strings and this just checks if all the strings match each other. **This returns a boolean. Not the 'isSuccess' object**
+
+*Make sure you pass at least two strings in the function.*
 
 This function does not give any error details (no `'err'` property in the object returned)
 
