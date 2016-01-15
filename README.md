@@ -23,6 +23,15 @@ The 'isSuccess' property of this object will let you determine if validation was
 
 *Some returned objects also contain an 'err' property which provides a number pertaining to a type of error. To figure out what each number means, see below*
 
+| Jump to a function | File the function is in|
+| -------------------|------------------------|
+| [charCounter(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#charcountertxt-min-max-ignspace-ignlinebrs-totrim--charcounterjs)| charCounter.js |
+| [emailValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#emailvalidatoremail--emailjs)| email.js |
+| [fileValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#filevalidatorfile-minsize-maxsize-filetype--filejs)| file.js |
+| [fullNameValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#fullnamevalidatorfullname--namejs)| name.js |
+| [firstOrLastNameValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#firstorlastnamevalidatorinput--namejs)| name.js |
+| [passwordValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#passwordvalidatorpassword-min-max-limspchars-requirements--passwordjs)| password.js |
+
 
 
 ###charCounter(txt, min, max, ignSpace, ignLineBrs, toTrim) | charCounter.js
