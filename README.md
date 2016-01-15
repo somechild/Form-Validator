@@ -8,6 +8,10 @@ The form I use from the demo is from the [forms section](http://jaypatel.co/side
 *You may find the functions in `DEMO/ValidationResultHandlers.js` useful if you plan on using the forms from my Web-Components page*
 
 
+
+
+
+
 ##The Files
 
 * `validators.min.js` contains all the validator functions compressed into one file
@@ -15,13 +19,22 @@ The form I use from the demo is from the [forms section](http://jaypatel.co/side
 * And of course, the uncompresssed validator functions are in the `Uncompressed JS` folder
 * `DEMO/view.js`, `DEMO/view.html` and `DEMO/validationResultHandlers.js` - *(I really like my camelCase haha)* - are the files you're going to want to check for the demo
 
+
+
+
+
+
 ##The Validator Functions
 
-**They all return objects.**
+**All functions return objects, except stringMatcher(...).**
 
 The 'isSuccess' property of this object will let you determine if validation was successful or not.
 
 *Some returned objects also contain an 'err' property which provides a number pertaining to a type of error. To figure out what each number means, see below*
+
+
+
+
 
 | Jump to a function | File the function is in|
 | -------------------|------------------------|
@@ -33,6 +46,9 @@ The 'isSuccess' property of this object will let you determine if validation was
 | [passwordValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#passwordvalidatorpassword-min-max-limspchars-requirements--passwordjs)| password.js |
 | [stringMatcher(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#stringmatcherstrarr--passwordjs)| password.js |
 | [urlValidator(...)](https://github.com/sum-kcid/Form-Validator/blob/master/README.md#urlvalidatorurl--urljs)| url.js |
+
+
+
 
 
 
@@ -52,12 +68,18 @@ The 'isSuccess' property of this object will let you determine if validation was
 
 
 
+
+
+
 ####emailValidator(email) | email.js
 *Note this sort of validation is just for aesthetics
   *if you would like to actually validate it, you can do it through services like http://www.mailgun.com/email-validation*
 * **'email': string** is the email string to be validated
 
 This function does not give any error details (no `'err'` property in the object returned)
+
+
+
 
 
 
@@ -88,11 +110,17 @@ For validating file objects
 
 
 
+
+
+
 ####fullNameValidator(fullName) | name.js
 **It's often good to not check the name much at all**, as it's tough to make assumptions but this very leniently tests for names and makes sure there is *more than one word entered* -- no international support (with unicode)
 * **'fullName': string** the string of the full name to be tested
 
 This function does not give any error details (no `'err'` property in the object returned)
+
+
+
 
 
 
@@ -104,6 +132,9 @@ This function does not give any error details (no `'err'` property in the object
 **If error**, there will be an `'err'` property passed in the object returned
 * If `firstOrLastNameValidator(...).err == 0`, that means there was more than one word entered
 * If `firstOrLastNameValidator(...).err == 1`, that means the string failed regex test (numbers in name, etc)
+
+
+
 
 
 
@@ -129,12 +160,20 @@ This lets you customisably validate an entered password
 * * If `passwordValidator(...).err == 6`, password contains spaces
 
 
+
+
+
+
 ####stringMatcher(strArr) | password.js
 Pass an array of strings and this just checks if all the strings match each other. **This returns a boolean. Not the 'isSuccess' object**
 
 *Make sure you pass at least two strings in the function.*
 
 This function does not give any error details (no `'err'` property in the object returned)
+
+
+
+
 
 
 ####urlValidator(url) | url.js
@@ -147,5 +186,10 @@ This function does not give any error details (no `'err'` property in the object
 
 
 
+
+
 ##Feedback
 Let me know if I've made any oversights while validating, mistakes in my code or if you have improvement ideas. Constructive feedback is always welcome :)
+
+
+
