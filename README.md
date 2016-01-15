@@ -28,9 +28,9 @@ The form I use from the demo is from the [forms section](http://jaypatel.co/side
 
 **All functions return objects, except stringMatcher(...).**
 
-The 'isSuccess' property of this object will let you determine if validation was successful or not.
+The `'isSuccess'` property of this object will let you determine if validation was successful or not.
 
-*Some returned objects also contain an 'err' property which provides a number pertaining to a type of error. To figure out what each number means, see below*
+*Some returned objects also contain an `'err'` property which provides a number pertaining to a type of error. To figure out what each number means, see below*
 
 
 
@@ -165,7 +165,7 @@ This lets you customisably validate an entered password
 
 
 ####stringMatcher(strArr) | password.js
-Pass an array of strings and this just checks if all the strings match each other. **This returns a boolean. Not the 'isSuccess' object**
+Pass an array of strings and this just checks if all the strings match each other. **This returns a boolean. Not the `'isSuccess'` object**
 
 *Make sure you pass at least two strings in the function.*
 
