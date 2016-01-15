@@ -17,10 +17,15 @@ The form I use from the demo is from the [forms section](http://jaypatel.co/side
 
 ##The Validator Functions
 
-**They all return objects.** the 'isSuccess' property of this object will let you determine if validation was successful or not.
+**They all return objects.**
+
+The 'isSuccess' property of this object will let you determine if validation was successful or not.
+
 *Some returned objects also contain an 'err' property which provides a number pertaining to a type of error. To figure out what each number means, see below*
 
-###charCounter(txt, min, max, ignSpace, ignLineBrs, toTrim)
+
+
+###charCounter(txt, min, max, ignSpace, ignLineBrs, toTrim) | charCounter.js
 *In the DEMO I use this for validation a textarea containing a description*
 
 * **'txt': string** is the txt to count on
@@ -36,14 +41,16 @@ The form I use from the demo is from the [forms section](http://jaypatel.co/side
 
 
 
-###emailValidator(email)
+###emailValidator(email) | email.js
 *Note this sort of validation is just for aesthetics
   *if you would like to actually validate it, you can do it through services like http://www.mailgun.com/email-validation*
 * **'email': string** is the email string to be validated
 
+This function does not give any error details (no `'err'` property in the object returned)
 
 
-###fileValidator(file, minSize, maxSize, fileType)
+
+###fileValidator(file, minSize, maxSize, fileType) | file.js
 
 For validating file objects
 
@@ -67,3 +74,39 @@ For validating file objects
 * If `fileValidator(...).err == 0`, that means the file size is less than the minimum specified
 * If `fileValidator(...).err == 1`, that means the file size is greater than the maximum specified
 * If `fileValidator(...).err == 2`, that means the file extension does not match the extensions specified
+
+
+
+###fullNameValidator(fullName) | name.js
+**It's often good to not check the name much at all**, as it's tough to make assumptions but this very leniently tests for names and makes sure there is *more than one word entered* -- no international support (with unicode)
+* **'fullName': string** the string of the full name to be tested
+
+This function does not give any error details (no `'err'` property in the object returned)
+
+
+
+###firstOrLastNameValidator(input) | name.js
+**It's often good to not check the name much at all**, as it's tough to make assumptions but this very leniently tests for names and makes sure there *is only one word entered* -- no international support (with unicode)
+* **'input': string** the string of the first or last name to be tested
+
+
+**If error**, there will be an `'err'` property passed in the object returned
+* If `firstOrLastNameValidator(...).err == 0`, that means there was more than one word entered
+* If `firstOrLastNameValidator(...).err == 1`, that means the string failed regex test (numbers in name, etc)
+
+
+
+###passwordValidator(password, min, max, limSpChars, requirements) | password.js
+This lets you customisably validate an entered password
+
+* **'password': string** is the password to validate on
+* **'min, max': integer** are the minimum and maximum limits of the text, pass false in either if no limit on that respective end
+* **'limSpChars': boolean** if you would like to only allow use of `! @ # $ % ^ & * ( ) _`  as alpha numeric chars, pass `true`
+* **'requirements': array of booleans** -->
+ * *[0]:* if true, pw must contain at least one lowercase and one uppercase letter
+ * *[1]:* if true, pw must contain at least one number
+ * *[2]:* if true, pw must contain at least on non-alphanumeric character
+ * *[3]:* if true, pw must not contain spaces
+
+
+
