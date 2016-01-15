@@ -154,7 +154,7 @@ a = function() { //if only validate onsubmit
 
 
 		if (allAreValid) {
-			if ('jsBasedValidation') {
+			if ('jsBasedFormSubmission') {
 				
 				e.preventDefault();
 
