@@ -24,9 +24,8 @@ charCounter = function(txt, min, max, ignSpace, ignLineBrs, toTrim) {
 	var text = toTrim? text.trim(): text;
 		text = ignSpace? ignLineBrs? txt.replace(' ', '').replace(/\s/g, ''): txt.replace(' ', '').replace(/\s/g, '_'): ignLineBrs? txt.replace(/\s/g, ''): txt.replace(/\s/g, '_');
 
-
 	return {
-		"isSuccess": min? !(text.length < min && (errNo = 0)) && (max? !(text.length > max && (errNo = 1)): true): max? !(text.length > max && (errNo = 1)): true,
-		"err": errNo
+		"isSuccess": min? !(text.length < min && (errNo = '0')) && (max? !(text.length > max && (errNo = 1)): true): max? !(text.length > max && (errNo = 1)): true,
+		"err": parseInt(errNo)
 	};
 };

@@ -34,7 +34,7 @@ fileValidator = function(file, minSize, maxSize, fileType) {
 	var errNo = -1;
 
 
-	var isInvalidFileSize = minSize? maxSize? (file.size > maxSize && (errNo = 1)) && (file.size < minSize && (errNo = 0)): (file.size < minSize && (errNo = 1)): maxSize? (file.size > maxSize  && (errNo = 1)): false;
+	var isInvalidFileSize = minSize? maxSize? (file.size > maxSize && (errNo = 1)) && (file.size < minSize && (errNo = '0')): (file.size < minSize && (errNo = 1)): maxSize? (file.size > maxSize  && (errNo = 1)): false;
 
 	var regToUse;
 	if (fileType)
@@ -65,8 +65,8 @@ fileValidator = function(file, minSize, maxSize, fileType) {
 
 	
 	return {
-		"isSuccess": !isInvalidFileSize && !(regToUse? (!file.name.match(regToUse) && errNo = 2): false),
-		"err": errNo
+		"isSuccess": !isInvalidFileSize && !(regToUse? (!file.name.match(regToUse) && (errNo = 2)): false),
+		"err": parseInt(errNo)
 	};
 
 };

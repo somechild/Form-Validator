@@ -4,7 +4,7 @@ fullNameValidator = function(fullName) {
 	var regex = /^[a-z ,.'-]+$/i;
 
 	return {
-		"isSuccess": regex.test(fullName)
+		"isSuccess": regex.test(fullName) && fullName.split(' ').length > 1
 	};
 };
 
@@ -16,7 +16,7 @@ firstOrLastNameValidator = function(input)  {
 	var errNo = -1;
 	var regex = /^[a-z ,.'-]+$/i;
 	return {
-		"isSuccess": (regex.test(input) && (errNo = 1)) && (input.split(' ').length > 1 && (errNo = 0)),
-		"err": errNo
+		"isSuccess": (regex.test(input) && (errNo = 1)) && (input.split(' ').length > 1 && (errNo = '0')),
+		"err": parseInt(errNo)
 	};
 };
