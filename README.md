@@ -36,7 +36,7 @@ The 'isSuccess' property of this object will let you determine if validation was
 
 
 
-###charCounter(txt, min, max, ignSpace, ignLineBrs, toTrim) | charCounter.js
+####charCounter(txt, min, max, ignSpace, ignLineBrs, toTrim) | charCounter.js
 *In the DEMO I use this for validation a textarea containing a description*
 
 * **'txt': string** is the txt to count on
@@ -52,7 +52,7 @@ The 'isSuccess' property of this object will let you determine if validation was
 
 
 
-###emailValidator(email) | email.js
+####emailValidator(email) | email.js
 *Note this sort of validation is just for aesthetics
   *if you would like to actually validate it, you can do it through services like http://www.mailgun.com/email-validation*
 * **'email': string** is the email string to be validated
@@ -61,7 +61,7 @@ This function does not give any error details (no `'err'` property in the object
 
 
 
-###fileValidator(file, minSize, maxSize, fileType) | file.js
+####fileValidator(file, minSize, maxSize, fileType) | file.js
 
 For validating file objects
 
@@ -88,7 +88,7 @@ For validating file objects
 
 
 
-###fullNameValidator(fullName) | name.js
+####fullNameValidator(fullName) | name.js
 **It's often good to not check the name much at all**, as it's tough to make assumptions but this very leniently tests for names and makes sure there is *more than one word entered* -- no international support (with unicode)
 * **'fullName': string** the string of the full name to be tested
 
@@ -96,7 +96,7 @@ This function does not give any error details (no `'err'` property in the object
 
 
 
-###firstOrLastNameValidator(input) | name.js
+####firstOrLastNameValidator(input) | name.js
 **It's often good to not check the name much at all**, as it's tough to make assumptions but this very leniently tests for names and makes sure there *is only one word entered* -- no international support (with unicode)
 * **'input': string** the string of the first or last name to be tested
 
@@ -107,7 +107,7 @@ This function does not give any error details (no `'err'` property in the object
 
 
 
-###passwordValidator(password, min, max, limSpChars, requirements) | password.js
+####passwordValidator(password, min, max, limSpChars, requirements) | password.js
 This lets you customisably validate an entered password
 
 * **'password': string** is the password to validate on
@@ -129,7 +129,7 @@ This lets you customisably validate an entered password
 * * If `passwordValidator(...).err == 6`, password contains spaces
 
 
-###stringMatcher(strArr) | password.js
+####stringMatcher(strArr) | password.js
 Pass an array of strings and this just checks if all the strings match each other. **This returns a boolean. Not the 'isSuccess' object**
 
 *Make sure you pass at least two strings in the function.*
@@ -137,7 +137,7 @@ Pass an array of strings and this just checks if all the strings match each othe
 This function does not give any error details (no `'err'` property in the object returned)
 
 
-###urlValidator(url) | url.js
+####urlValidator(url) | url.js
 A url validator
 * **'url': string** is the url to validate on
 
