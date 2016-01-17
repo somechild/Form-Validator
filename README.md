@@ -28,9 +28,9 @@ The form I use from the demo is from the [forms section](http://jaypatel.co/side
 
 **All functions return objects, except stringMatcher(...).**
 
-The `'isSuccess'` property of this object will let you determine if validation was successful or not.
+The `isSuccess` property of this object will let you determine if validation was successful or not.
 
-*Some returned objects also contain an `'err'` property which provides a number pertaining to a type of error. To figure out what each number means, see below*
+*Some returned objects also contain an `err` property which provides a number pertaining to a type of error. To figure out what each number means, see below*
 
 
 
@@ -62,7 +62,7 @@ The `'isSuccess'` property of this object will let you determine if validation w
 * **'ignLineBrs': boolean** if you would like to ignore line breaks from the character count, pass `true`
 * **'toTrim': boolean** if you would like the function to trim spaces before counting characters, pass `true`
 
-**If error**, there will be an `'err'` property passed in the object returned
+**If error**, there will be an `err` property passed in the object returned
 * If `charCounter(...).err == 0`, that means character count is less than the minimum specified
 * If `charCounter(...).err == 1`, that means character count is more than the maximum specified
 
@@ -76,7 +76,7 @@ The `'isSuccess'` property of this object will let you determine if validation w
   *if you would like to actually validate it, you can do it through services like http://www.mailgun.com/email-validation*
 * **'email': string** is the email string to be validated
 
-This function does not give any error details (no `'err'` property in the object returned)
+This function does not give any error details (no `err` property in the object returned)
 
 
 
@@ -103,7 +103,7 @@ For validating file objects
       * This validates against `.xls`, `.ppt` as well as common text file extensions `doc|docx|log|pages|rtf|txt|wpd|wps|msg|odt|tex`
 
 
-**If error**, there will be an `'err'` property passed in the object returned
+**If error**, there will be an `err` property passed in the object returned
 * If `fileValidator(...).err == 0`, that means the file size is less than the minimum specified
 * If `fileValidator(...).err == 1`, that means the file size is greater than the maximum specified
 * If `fileValidator(...).err == 2`, that means the file extension does not match the extensions specified
@@ -117,7 +117,7 @@ For validating file objects
 **It's often good to not check the name much at all**, as it's tough to make assumptions but this very leniently tests for names and makes sure there is *more than one word entered* -- no international support (with unicode)
 * **'fullName': string** the string of the full name to be tested
 
-This function does not give any error details (no `'err'` property in the object returned)
+This function does not give any error details (no `err` property in the object returned)
 
 
 
@@ -129,7 +129,7 @@ This function does not give any error details (no `'err'` property in the object
 * **'input': string** the string of the first or last name to be tested
 
 
-**If error**, there will be an `'err'` property passed in the object returned
+**If error**, there will be an `err` property passed in the object returned
 * If `firstOrLastNameValidator(...).err == 0`, that means there was more than one word entered
 * If `firstOrLastNameValidator(...).err == 1`, that means the string failed regex test (numbers in name, etc)
 
@@ -150,7 +150,7 @@ This lets you customisably validate an entered password
  * *[2]:* if true, pw must contain at least on non-alphanumeric character
  * *[3]:* if true, pw must not contain spaces
 
-**If error**, there will be an `'err'` property passed in the object returned
+**If error**, there will be an `err` property passed in the object returned
 * If `passwordValidator(...).err == 0`, password fails min char requirement
 * If `passwordValidator(...).err == 1`, password fails max char requirement
 * * If `passwordValidator(...).err == 2`, password contains special characters outside of `! @ # $ % ^ & * ( ) _`
@@ -165,11 +165,12 @@ This lets you customisably validate an entered password
 
 
 ####stringMatcher(strArr) | password.js
-Pass an array of strings and this just checks if all the strings match each other. **This returns a boolean. Not the `'isSuccess'` object**
+Pass an array of strings and this just checks if all the strings match each other. In the `DEMO`, I use this for the *password confirmation* input.
+**This returns a boolean. Not the `isSuccess` object**
 
 *Make sure you pass at least two strings in the function.*
 
-This function does not give any error details (no `'err'` property in the object returned)
+This function does not give any error details (no `err` property in the object returned)
 
 
 
@@ -180,7 +181,7 @@ This function does not give any error details (no `'err'` property in the object
 A url validator
 * **'url': string** is the url to validate on
 
-This function does not give any error details (no `'err'` property in the object returned)
+This function does not give any error details (no `err` property in the object returned)
 
 
 
