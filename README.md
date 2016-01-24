@@ -1,6 +1,6 @@
-# Form-Validator
+# Form-Validator - Deprecated
 
-**A bunch of form input validation functions I made because I thought they'd be useful :)**
+**I no longer maintain this repo, it has moved over to our project at [Notebulb](https://github.com/Notebulb), access it [here](https://github.com/Notebulb/Form-Validator)**
 
 
 The form I use from the demo is from the [forms section](http://jaypatel.co/sideSites/wc/#frms/) my [Web-Components Page](http://jaypatel.co/sideSites/wc/). You can also visit the [GitHub](https://github.com/sum-kcid/Web-Components) repo for the Web-Components.
